@@ -47,14 +47,3 @@ zip -r hotel-management.zip backend frontend docker-compose.yml k8s README.md
 
 This will create `hotel-management.zip` you can upload to GitHub or extract locally.
 
-## Notes & next steps
-- The backend uses H2 in-memory DB for ease of testing; change to PostgreSQL or MySQL for production.
-- Set up CI to build Docker images and push to a registry.
-- Add validation, logging, authentication/authorization (e.g., Spring Security / JWT) if needed.
-
-If you want, I can:
-- Make a GitHub repo structure and generate the exact zip for you (I can provide a downloadable zip if you want me to assemble it here).
-- Add PostgreSQL docker-compose config and migration scripts.
-- Add unit/integration tests for backend endpoints.
-
-Tell me which follow-up you'd like.
