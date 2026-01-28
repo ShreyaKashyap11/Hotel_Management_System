@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    image: hotel-backend:local
+    ports:
+      - "8080:8080"
+    networks:
+      - hotel-net
+
+  frontend:
+    build: ./frontend
+    image: hotel-frontend:local
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_BASE=http://localhost:8080/api
+    networks:
+      - hotel-net
+
+networks:
+  hotel-net:
+    driver: bridge

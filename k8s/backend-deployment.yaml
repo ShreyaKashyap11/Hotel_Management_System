@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotel-backend
+  template:
+    metadata:
+      labels:
+        app: hotel-backend
+    spec:
+      containers:
+        - name: hotel-backend
+          image: hotel-backend:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotel-backend
+spec:
+  type: ClusterIP
+  selector:
+    app: hotel-backend
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
